@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SICF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <URL>/sap/bc/bsp/sap/zdmo_pbo/</URL>
+   <ICFSERVICE>
+    <ICF_NAME>ZDMO_PBO</ICF_NAME>
+    <ORIG_NAME>zdmo_pbo</ORIG_NAME>
+   </ICFSERVICE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

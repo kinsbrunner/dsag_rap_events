@@ -1,0 +1,63 @@
+managed implementation in class zbp_r_dmo_processbo unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_DMO_ProcessBO alias ProcessBO
+persistent table zdmo_procbo
+with additional save
+draft table zdmo_procbo_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+{
+  field ( mandatory : create )
+  ProcessID;
+
+  field ( readonly )
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  ProcessID;
+
+  static factory action createForSalesOrder parameter ZA_DMO_SALESORDER_CREATED [1];
+  action createSimple result [1] $self;
+  action retry result [1] $self;
+
+  validation checkDesignTeam on save { create; }
+
+  create;
+  update;
+  delete;
+
+  event processStarted;// parameter ZA_DMO_PROCESS_STARTED;
+  event materialCreated;// parameter ZA_DMO_PROCESS_STARTED;
+  event materialCreateError;
+  event bomCreated;// parameter ZA_DMO_PROCESS_STARTED;
+  event updateStatus parameter ZA_DMO_UPDATE_STATUS;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare { validation checkDesignTeam; }
+
+  mapping for zdmo_procbo
+    {
+      ProcessID          = process_id;
+      Status             = status;
+      ErrorDescription   = error_description;
+      DesignTeam         = design_team;
+      Salesorder         = salesorder;
+      Material           = material;
+      Billofmaterial     = billofmaterial;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedAt      = last_changed_at;
+      LastChangedBy      = last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}

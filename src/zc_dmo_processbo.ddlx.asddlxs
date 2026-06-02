@@ -1,0 +1,43 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Process-BO', typeNamePlural: 'Processes' }
+
+annotate view ZC_DMO_ProcessBO with
+
+{
+  @UI.facet: [ { id: 'idIdentification', type: #IDENTIFICATION_REFERENCE, label: 'Process-BO', position: 10 } ]
+  @UI.identification: [ { position: 10 },
+                        { type: #FOR_ACTION, dataAction: 'createSimple', label: 'Simple Create' },
+                        { type: #FOR_ACTION, dataAction: 'retry', label: 'Retry' } ]
+  @UI.lineItem: [ { position: 10, importance: #MEDIUM, label: 'Process-ID' },
+                  { type: #FOR_ACTION, dataAction: 'createSimple', label: 'Simple Create' },
+                  { type: #FOR_ACTION, dataAction: 'retry', label: 'Retry' } ]
+  ProcessID;
+
+  @UI.identification: [ { position: 20, label: 'Status' } ]
+  @UI.lineItem: [ { position: 20, importance: #MEDIUM, label: 'Status' } ]
+  Status;
+
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25, importance: #MEDIUM } ]
+  errorDescription;
+
+  @UI.identification: [ { position: 30, label: 'DesignTeam' } ]
+  @UI.lineItem: [ { position: 30, importance: #MEDIUM, label: 'DesignTeam' } ]
+  DesignTeam;
+
+  @UI.identification: [ { position: 40, label: 'Salesorder' } ]
+  @UI.lineItem: [ { position: 40, importance: #MEDIUM, label: 'Salesorder' } ]
+  Salesorder;
+
+  @UI.identification: [ { position: 50, label: 'Material' } ]
+  @UI.lineItem: [ { position: 50, importance: #MEDIUM, label: 'Material' } ]
+  Material;
+
+  @UI.identification: [ { position: 60, label: 'Billofmaterial' } ]
+  @UI.lineItem: [ { position: 60, importance: #MEDIUM, label: 'Billofmaterial' } ]
+  Billofmaterial;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

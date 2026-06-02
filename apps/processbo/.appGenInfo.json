@@ -1,0 +1,29 @@
+{
+  "generationParameters": {
+    "generationDate": "Thu Mar 12 2026 11:37:49 GMT+0100 (Mitteleuropäische Normalzeit)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://demo.brandeis.de:50000/sap/opu/odata4/iwbep/all/srvd/sap/zui_dmo_processbo_o4/0001/",
+    "appName": "processbo",
+    "appTitle": "Process BO",
+    "appDescription": "DEMO: Process BO",
+    "appNamespace": "de.brandeis.dmo",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.145.0",
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.20.4",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "ProcessBO"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```",
+    "valueHelpDownloaded": true
+  }
+}

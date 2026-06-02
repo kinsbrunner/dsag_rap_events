@@ -1,0 +1,50 @@
+managed with additional save with full data
+implementation in class zbp_r_dmo_salesorder unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_DMO_SALESORDER alias SalesOrder
+persistent table zdmo_salesorder
+draft table ZDMO_SALESORD_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Salesorder;
+
+  field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LastChangedAt,
+   LastChangedBy,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   Salesorder;
+
+
+  create;
+  update;
+  delete;
+
+  event SalesOrderCreated parameter ZA_DMO_SALESORDER_CREATED;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZDMO_SALESORDER
+  {
+    Salesorder = salesorder;
+    Customer = customer;
+    MaterialText = material_text;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

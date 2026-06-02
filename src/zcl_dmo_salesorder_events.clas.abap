@@ -1,0 +1,15 @@
+CLASS zcl_dmo_salesorder_events DEFINITION
+  PUBLIC
+  ABSTRACT
+  FINAL
+  FOR EVENTS OF zr_dmo_salesorder .
+
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_dmo_salesorder_events IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for ZC_DMO_ProcessBO'
+define service ZUI_DMO_ProcessBo_O4 {
+  expose ZC_DMO_ProcessBO  as ProcessBO;
+  expose ZC_DMO_SALESORDER as SalesOrder;
+}

@@ -1,0 +1,13 @@
+<mxfile host="65bd71144e">
+    <diagram id="_4aaQa58-bPLAhElQ8Gp" name="Seite-1">
+        <mxGraphModel dx="2153" dy="618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" value="sequenceDiagram&#xa;    participant SO as ZBP_R_DMO_SalesOrder &#xa;    participant SO_EVENTS as ZCL_DMO_SalesOrder_Events&#xa;    participant PBO as ZBP_R_DMO_ProcessBO&#xa;    participant PBO_EVENTS as ZCL_DMO_ProcessBO_Events&#xa;    participant MAT as ZCL_DMO_MATERIAL&#xa;    participant BOM as ZCL_DMO_BILLOFMATERIAL&#xa;    SO-&gt;&gt;SO_EVENTS: Raise Event SO Created&#xa;    SO_EVENTS-&gt;&gt;PBO: Create ProcessBO&#xa;PBO--&gt;&gt;PBO_EVENTS: Raise Event &quot;Process Started&quot;&#xa;PBO_EVENTS-&gt;&gt;MAT: Create Material&#xa; loop BAPI-Create&#xa;        MAT-&gt;&gt;MAT: Call BAPIs&#xa;    end&#xa;MAT-&gt;&gt;PBO: Set Status&#xa;PBO--&gt;&gt;PBO_EVENTS: Raise Event &quot;Material Created&quot;&#xa;PBO_EVENTS-&gt;&gt;BOM: Create Bill of Material&#xa;BOM-&gt;&gt;PBO: Set Status" style="shadow=0;dashed=0;align=left;strokeWidth=1;shape=mxgraph.mermaid.abstract.mermaid;labelBackgroundColor=#ffffff;noLabel=1;theme=default;" parent="1" vertex="1">
+                    <mxGeometry x="-640" y="80" width="630" height="380" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'SalesOrder', 
+    typeNamePlural: 'SalesOrders'
+  }
+}
+annotate view ZC_DMO_SALESORDER with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'SalesOrder', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'Salesorder'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Salesorder'
+  } ]
+  Salesorder;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'Customer'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Customer'
+  } ]
+  Customer;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'MaterialText'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'MaterialText'
+  } ]
+  MaterialText;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Demo BAPIs</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZDMO_BAPISTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZDMO_BAPIS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Z_DMO_BAPI_BOM</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Bom Create</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATERIAL</PARAMETER>
+       <TYP>ZDMO_NUMC10</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DESCRIPTION</PARAMETER>
+       <TYP>ZDMO_CHAR50</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_BILLOFMATERIAL</PARAMETER>
+       <TYP>ZDMO_NUMC10</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>MATERIAL_UNKNOWN</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATERIAL</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DESCRIPTION</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_BILLOFMATERIAL</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MATERIAL_UNKNOWN</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Material not known</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_DMO_BAPI_MAT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Material Create</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TEXT</PARAMETER>
+       <TYP>ZDMO_CHAR50</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BASEUNIT</PARAMETER>
+       <TYP>ZDMO_CHAR10</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_MATERIAL</PARAMETER>
+       <TYP>ZDMO_NUMC10</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Demo: Char50</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BASEUNIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Demo: Char10</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MATERIAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Demo: Char10</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_DMO_BAPI_MAT_2</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Material Create</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TEXT</PARAMETER>
+       <TYP>ZDMO_CHAR50</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BASEUNIT</PARAMETER>
+       <TYP>ZDMO_CHAR10</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_MATERIAL</PARAMETER>
+       <TYP>ZDMO_NUMC10</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Demo: Char50</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BASEUNIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Demo: Char10</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MATERIAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Demo: Char10</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
